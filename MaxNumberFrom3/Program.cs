@@ -6,26 +6,9 @@ int numberB = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите третье число: ");
 int numberС = Convert.ToInt32(Console.ReadLine());
 
+int max = numberA;
 
-if (numberA > numberB)
-    {
-        if (numberA > numberС)
-        {
-                Console.WriteLine("Максимальное из трех чисел: " + numberA); 
-        }
-        else
-        {
-                Console.WriteLine("Максимальное из трех чисел: " + numberС);
-        }
-    }
-    else
-    {
-        if (numberB > numberС)
-       {
-            Console.WriteLine("Максимальное из трех чисел: " + numberB); 
-       }
-       else
-       {
-           Console.WriteLine("Максимальное из трех чисел: " + numberС);
-       }
-    }
+if (numberB > max) max = numberB;
+if (numberС > max) max = numberС;
+
+Console.WriteLine("Максимальное из трех чисел: " + max);
