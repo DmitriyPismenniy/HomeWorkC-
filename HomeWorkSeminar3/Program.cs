@@ -65,13 +65,13 @@ void Z19ForAnyNumberString()
 
     if (s[0] != '-')
     {
-        for (int i = s.Length - 1; i > -1; --i)
+        for (int i = s.Length - 1; i > -1; i--)
          s1 += (s[i]);         
     }
     else
     {
         s1 = "-";        
-        for (int i = s.Length - 1; i > 0; --i)
+        for (int i = s.Length - 1; i > 0; i--)
             s1 += (s[i]);
     }
     
@@ -86,26 +86,15 @@ void Z19StringToNumber()
 {
     Console.Write("Введите положительное целое число: ");
     string s = Console.ReadLine();
+
     int number = 0;
-    int result = Power(number);
-    Console.WriteLine("Число равно " + result);
-    result -= 1;
-    Console.WriteLine("Число -1 равно " + result);
-    
-    //Процедура преобразования строки в число
-    int Power(int number)
+    int d = 1;
+    for (int i = s.Length; i > 0; i--)
     {
-        int d = 0;
-        int level = s.Length - 1;
-        for (int i = 0; i < s.Length; i++)
-        {
-        int a = (int)(s[d]);
-        number += ((a-48)* (int)Math.Pow(10, level));
-        level -=1;     
-        d++;
-        }    
-    return (number);
-    }            
+        number += ((int)(s[i-1]) - 48) * d;
+        d *= 10;
+    }    
+    Console.WriteLine("number = " + number);
 }
 
 void Zadacha21()
@@ -150,7 +139,7 @@ void Zadacha23()
 
 //Zadacha19();
 //Z19ForAnyNumber();
-//Z19ForAnyNumberString();
+Z19ForAnyNumberString();
 //Z19StringToNumber();
 //Zadacha21();
-Zadacha23();
+//Zadacha23();
